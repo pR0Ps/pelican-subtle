@@ -49,3 +49,5 @@ pelican-svbhack is authored by [Giulio Fidente](https://github.com/giulivo).
 ## Licence
 
 Released under MIT License, full details in `LICENSE` file.
+
+Pull requests welcome!
