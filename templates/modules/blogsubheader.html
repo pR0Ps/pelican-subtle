@@ -2,18 +2,18 @@
 {% if INDEX_SAVE_AS %}
 <a href="{{ SITEURL }}/{{ INDEX_SAVE_AS }}">Posts</a> &#124;
 {% else %}
-<a href="{{ SITEURL }}">Posts</a> &#124;
+<a href="{{ SITEURL }}">Posts</a>
 {% endif %}
 {% if TAGS_URL %}
-<a href="{{ SITEURL }}/{{ TAGS_URL }}">Tags</a> &#124;
+&#124; <a href="{{ SITEURL }}/{{ TAGS_URL }}">Tags</a>
 {% endif %}
 {% if CATEGORIES_URL %}
-<a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Categories</a> &#124;
+&#124; <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Categories</a>
 {% endif %}
 {% if AUTHORS_URL %}
-<a href="{{ SITEURL }}/{{ AUTHORS_URL }}">Authors</a> &#124;
+&#124; <a href="{{ SITEURL }}/{{ AUTHORS_URL }}">Authors</a>
 {% endif %}
 {% if ARCHIVES_URL %}
-<a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archive</a>
+&#124; <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archive</a>
 {% endif %}
 </p>
