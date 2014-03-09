@@ -60,7 +60,9 @@
       <ul>
         {% for name, link in SOCIAL %}
 
-        {% set temp = link|lower|replace('http://', '')|replace('https://', '') %}
+        {# Attempt to normalize link URLs #}
+        {% set temp = link|lower|replace('http://', '')|replace('https://', '')|replace('www.', '') %}
+
         {% set class = 'fa-external-link-square' %}
 
         {% if MANGLE_EMAILS and temp.startswith('mailto:') %}
