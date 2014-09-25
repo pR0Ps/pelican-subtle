@@ -15,7 +15,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="{{ AUTHOR }}">
-  <meta name="description" content="Posts and writings by {{ AUTHOR }}">
+  <meta name="description" content="{% block description %}Posts by {{ AUTHOR }}{% endblock %}">
 
   {% if GOOGLE_PLUS_URL %}
   <link rel="author" href="{{ GOOGLE_PLUS_URL }}?rel=author">

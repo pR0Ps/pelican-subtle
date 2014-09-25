@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.title }} | {{ article.content|striptags|truncate(250)|escape }}{% endblock %}
 
 {% block subheader %}
 <p>Posted
