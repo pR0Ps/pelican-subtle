@@ -32,7 +32,6 @@ This theme supports a number of custom variables:
 - `GOOGLE_PLUS_URL`: A link to your Google+ profile. Used for the [Google Authorship](http://www.google.com/insidesearch/features/authorship/index.html) feature.
 - `USER_LOGO_URL`: The image to display as the profile image. Can be local or a remote URL.
 - `DISQUS_SITENAME`: Set this to enable Disqus comments on articles.
-- `COLLAPSE_COMMENTS`: Set to `True` to have article comments hidden by default. Clicking on the 'comments' link will toggle visibility.
 - `TAGLINE`: The site's tagline. Rendered right below the image.
 - `SCROLL_TO_CONTENT`: If this is set to `True`, when content is below the sidebar (for example, on mobile), the page will be scrolled down to the content when it loads. An exception is made for the home page.
 - `FORCE_PIXELS`: Some screens (mostly mobiles) don't use pixels directly and scale based on the concept of a 'display pixel'. Setting this to `True` tells the device to use actual pixels. Enable with care.

@@ -42,25 +42,10 @@ on {{ article.locale_date }}</p>
       {% endfor %}
     </p>
     {% endif %}
-    {% if DISQUS_SITENAME %}
-      {% if COLLAPSE_COMMENTS %}
-      <p>Comments: <a href="#" onclick="javascript:toggleComments();return false;">toggle</a></p>
-      {% endif %}
-    {% endif %}
   </div>
 
   {% if DISQUS_SITENAME %}
-
-    {% if COLLAPSE_COMMENTS %}
-    <script language="javascript">
-        function toggleComments() {
-            var commentDiv = document.getElementById("article_comments");
-            (commentDiv.style.display == "none") ? commentDiv.style.display = "block" : commentDiv.style.display = "none";
-            return false;
-        }
-    </script>
-    {% endif %}
-    <div id="article_comments" style="display:{%if COLLAPSE_COMMENTS %}none{% else %}block{% endif %}">
+    <div id="article_comments">
         <div id="disqus_thread"></div>
         <script type="text/javascript">
            var disqus_identifier = "{{ article.url }}";
