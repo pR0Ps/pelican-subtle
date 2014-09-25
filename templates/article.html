@@ -3,15 +3,13 @@
 <meta name="keywords" content="
   {%- if GLOBAL_KEYWORDS -%}
     {{ GLOBAL_KEYWORDS|join(', ') }}
-    {%- if article.tags -%}
-      {{', '}}
-    {%- endif -%}
+    {%- if article.tags -%}{{', '}}{%- endif -%}
   {%- endif -%}
   {{article.tags|join(', ') }}">
 {% endblock %}
 
-{% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
-{% block description %}{{ article.title }} | {{ article.content|striptags|truncate(250)|escape }}{% endblock %}
+{% block title %}{{ article.title|striptags|escape }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.title|striptags|escape }} | {{ article.content|striptags|truncate(250)|escape }}{% endblock %}
 
 {% block subheader %}
 <p>Posted

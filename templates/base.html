@@ -32,9 +32,7 @@
   <meta name="keywords" content="
     {%- if GLOBAL_KEYWORDS -%}
       {{ GLOBAL_KEYWORDS|join(', ') }}
-      {%- if tags -%}
-        {{', '}}
-      {%- endif -%}
+      {%- if tags -%}{{', '}}{%- endif -%}
     {%- endif -%}
     {{tags|join(', ', attribute='0') }}">
   {% endblock %}
