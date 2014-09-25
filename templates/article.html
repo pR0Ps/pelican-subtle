@@ -32,11 +32,13 @@ on {{ article.locale_date }}</p>
     {{ article.content }}
   </div>
   <div class="article_meta">
+    <p>
     {% if CATEGORY_URL %}
-    <p>Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></p>
+    Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+    {% if TAG_URL and article.tags %}&ndash;&ndash;{% endif %}
     {% endif %}
     {% if TAG_URL and article.tags %}
-    <p>Tags:
+    Tags:
       {% for tag in article.tags %}
       <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
       {% endfor %}
