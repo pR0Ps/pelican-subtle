@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block title %}{{ article.title|striptags|escape }} | {{ SITENAME }}{% endblock %}
-{% block description %}{{ article.title|striptags|escape }} | {{ article.content|striptags|truncate(250)|escape }}{% endblock %}
+{% block description %}{{ article.title|striptags|escape }} | {{ article.content|striptags|truncate(154-article.title|length)|escape }}{% endblock %}
 
 {% block subheader %}
 <p>Posted
