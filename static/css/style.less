@@ -11,13 +11,14 @@
 @sans: 'Ubuntu', sans-serif;
 @mono: 'Ubuntu Mono', monospace;
 
-@side_size: 250px;
-@main_size: 740px;
 @border_color: #c2c2c2;
 @pag_label_size: 60px;
 @logo_size: 150px;
 
-@total_size: (@side_size + @main_size + 16px);
+@content_size: 640px;
+@horiz_pad: 40px;
+
+@min_screen: ((@content_size + @horiz_pad * 2) * 1.32);
 
 body {
   margin: 0;
@@ -48,7 +49,7 @@ hr {
 
 aside {
   div#user_meta {
-    padding: 40px 20px 40px 20px;
+    padding: @horiz_pad 20px @horiz_pad 20px;
     text-align: center;
 
     img#logo {
@@ -91,13 +92,12 @@ aside {
 }
 
 main {
-  max-width: @main_size;
   position: relative;
   width: 100%;
   margin: auto;
 
   header {
-    padding: 20px 40px 20px 40px;
+    padding: 20px @horiz_pad 20px @horiz_pad;
     border-top: @border_color 1px solid;
     border-bottom: @border_color 1px solid;
     text-align: center;
@@ -124,7 +124,9 @@ main {
   }
 
   article {
-    padding: 10px 40px 10px 40px;
+    padding: 10px @horiz_pad 10px @horiz_pad;
+    max-width: @content_size;
+    margin: auto;
 
     div.article_title {
     }
@@ -158,7 +160,7 @@ main {
 
       blockquote {
         margin: 22px 2px 22px 2px;
-        padding-left: 40px;
+        padding-left: @horiz_pad;
         color: @med-grey;
         font-style: italic;
       }
@@ -191,7 +193,7 @@ main {
 
   footer {
     border-top: @border_color 1px solid;
-    padding: 30px 40px 30px 40px;
+    padding: 30px @horiz_pad 30px @horiz_pad;
 
     div#paginator {
       font-weight: bold;
@@ -219,15 +221,15 @@ main {
 
   div#ending_message {
     border-top: @border_color 1px solid;
-    padding: 0 40px 0 40px;
+    padding: 0 @horiz_pad 0 @horiz_pad;
     color: @med-grey;
     font-size: 10px;
   }
 }
 
-@media screen and (min-width: @total_size) {
+@media screen and (min-width: @min_screen) {
   aside {
-    width: @side_size;
+    width: 25%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -247,8 +249,9 @@ main {
   main {
     position: absolute;
     top: 0;
-    left: @side_size;
-    margin: 0;
+    left: 25%;
+    width: 75%;
+    margin-left: -1px;
     border-left: @border_color 1px solid;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -256,6 +259,17 @@ main {
     header {
       border-top: 0;
       text-align: left;
+    }
+
+    article {
+      width: @content_size;
+      margin: 0;
+    }
+
+    footer{
+      div#paginator {
+        width: @content_size;
+      }
     }
   }
 }
