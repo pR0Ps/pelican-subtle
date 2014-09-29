@@ -18,7 +18,8 @@
 @content_size: 640px;
 @horiz_pad: 40px;
 
-@min_screen: ((@content_size + @horiz_pad * 2) * 1.32);
+//The minimum size the screen can be without scaling the main content
+@min_screen: floor(((@content_size + @horiz_pad * 2) * 1.33));
 
 body {
   margin: 0;
