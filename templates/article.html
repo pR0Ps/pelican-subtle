@@ -12,15 +12,7 @@
 {% block description %}{{ article.title|striptags|escape }} | {{ article.content|striptags|truncate(154-article.title|length)|escape }}{% endblock %}
 
 {% block subheader %}
-<p>Posted
-{% if article.author %}
- by{% if AUTHORS_URL %}
- <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-{% else %}
- {{ article.author}}
-{% endif %}
-{% endif %}
-on {{ article.locale_date }}</p>
+{% include "modules/blogsubheader.html" %}
 {% endblock %}
 
 {% block content %}
@@ -32,6 +24,11 @@ on {{ article.locale_date }}</p>
     {{ article.content }}
   </div>
   <div class="article_meta">
+    <p>Posted on {{ article.locale_date }}
+    {% if article.author %}
+     by {% if AUTHORS_URL %} <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>{% else %}{{ article.author}}{% endif %}
+    {% endif %}
+    </p>
     <p>
     {% if CATEGORY_URL %}
     Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
