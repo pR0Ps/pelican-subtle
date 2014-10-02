@@ -28,6 +28,7 @@ body {
   color: @dark-grey;
   font-family: @sans;
   font-size: 16px;
+  min-width: 300px;
 }
 
 a {
@@ -203,9 +204,12 @@ main {
       overflow: auto;
       text-align: center;
 
+      div{
+        display: inline-block;
+      }
+
       span {
         width: @pag_label_size;
-        min-height: 1px;
       }
 
       span#left {
