@@ -1,7 +1,7 @@
 Subtle Pelican Theme
 ====================
 
-[pelican-subtle](https://github.com/pR0Ps/pelican-svbhack) is a responsive theme for [Pelican](http://getpelican.com), it is my take on Giulio Fidente's [pelican-svbhack](https://github.com/giulivo/pelican-svbhack) theme.
+[pelican-subtle](https://github.com/pR0Ps/pelican-subtle) is a responsive theme for [Pelican](http://getpelican.com), it is my take on Giulio Fidente's [pelican-svbhack](https://github.com/giulivo/pelican-svbhack) theme.
 
 ## Demo
 
@@ -19,7 +19,7 @@ You can see the theme in action on [my site](http://cmetcalfe.ca/).
 
 ## Installing
 
-Clone the [repository](https://github.com/pR0Ps/pelican-svbhack), edit your `pelicanconf.py` and modify the `THEME` variable to point to the downloaded theme location.
+Clone the [repository](https://github.com/pR0Ps/pelican-subtle), edit your `pelicanconf.py` and modify the `THEME` variable to point to the downloaded theme location.
 
 ## pelicanconf.py
 
