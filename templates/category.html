@@ -1,6 +1,8 @@
 {% extends "index.html" %}
 {% block title %}Category: {{ category }} | {{ SITENAME }}{% endblock %}
 
+{% block description %}Posts in the {{ category }} section of this site{% endblock %}
+
 {% block head %}
 {% if CATEGORY_FEED_ATOM %}
 <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} {{ category }} Category Atom Feed" />

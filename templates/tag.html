@@ -1,6 +1,8 @@
 {% extends "index.html" %}
 {% block title %}Tag: {{ tag }} | {{ SITENAME }}{% endblock %}
 
+{% block description %}Posts tagged with '{{ tag }}' on this site{% endblock %}
+
 {% block head %}
 {% if TAG_FEED_ATOM %}
 <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} {{ tag }} Tag Atom Feed" />
