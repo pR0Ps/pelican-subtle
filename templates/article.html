@@ -28,6 +28,9 @@
     {% if article.author %}
      by {% if AUTHORS_URL %} <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>{% else %}{{ article.author}}{% endif %}
     {% endif %}
+    {% if article.modified %}
+    <p>Last updated {{ article.locale_modified }}</p>
+    {% endif %}
     </p>
     <p>
     {% if CATEGORY_URL %}
