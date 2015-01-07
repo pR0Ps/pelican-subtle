@@ -18,7 +18,7 @@
           <h3>{{ month_articles[0].date.strftime('%B') }}</h3>
           <ul>
             {% for article in month_articles %}
-              <li><span>{{ article.date.strftime('%b %d, %Y') }}</span> - <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+              <li><time datetime="{{ article.date }}">{{ article.date.strftime('%b %d, %Y') }}</time> - <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
             {% endfor %}
           </ul>
         {% endfor %}
