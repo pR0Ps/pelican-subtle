@@ -24,12 +24,12 @@
     {{ article.content }}
   </div>
   <div class="article_meta">
-    <p>Posted on <time datetime="{{ article.date }}">{{ article.locale_date }}</time>
+    <p>Posted on <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
     {% if article.author %}
      by {% if AUTHORS_URL %} <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>{% else %}{{ article.author}}{% endif %}
     {% endif %}
     {% if article.modified %}
-    <p>Last updated <time datetime="{{ article.modified }}">{{ article.locale_modified }}</time></p>
+    <p>Last updated <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></p>
     {% endif %}
     </p>
     <p>
