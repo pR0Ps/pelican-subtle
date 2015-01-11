@@ -9,6 +9,11 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.6.1/less.min.js" type="text/javascript"></script>
   {% endif %}
 
+
+  {% if FUZZY_DATES %}
+  <script src="{{ SITEURL }}/theme/js/lw-timeago/lw-timeago.js" type="text/javascript"></script>
+  {% endif %}
+
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
@@ -138,6 +143,7 @@
     </div>
   </main>
 
+  {% block scripts %}
   {% if SCROLL_TO_CONTENT %}
   <script type="text/javascript">
     if (window.location.pathname != '/' && window.location.pathname != '/index.html'){
@@ -169,5 +175,7 @@
     }
   </script>
   {% endif %}
+
+  {% endblock scripts %}
 </body>
 </html>

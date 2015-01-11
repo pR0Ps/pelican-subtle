@@ -1,0 +1,3 @@
+[submodule "static/js/lw-timeago"]
+	path = static/js/lw-timeago
+	url = https://github.com/pR0Ps/lw-timeago.git

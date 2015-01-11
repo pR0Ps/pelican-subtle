@@ -24,7 +24,7 @@
     {{ article.content }}
   </div>
   <div class="article_meta">
-    <p>Posted on <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+    <p>Posted <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
     {% if article.author %}
      by {% if AUTHORS_URL %} <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>{% else %}{{ article.author}}{% endif %}
     {% endif %}
@@ -59,7 +59,15 @@
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-    {% endif %}
+  {% endif %}
+
+  {% if FUZZY_DATES %}
+  {% block scripts %}
+  {{ super() }}
+  <script type="text/javascript">lw_timeago.doReplace()</script>
+  {% endblock %}
+  {% endif %}
+
 </article>
 {% endblock %}
 
