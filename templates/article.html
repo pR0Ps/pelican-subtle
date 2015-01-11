@@ -11,10 +11,6 @@
 {% block title %}{{ article.title|striptags|escape }} | {{ SITENAME }}{% endblock %}
 {% block description %}{{ article.title|striptags|escape }} | {{ article.content|striptags|truncate(154-article.title|length)|escape }}{% endblock %}
 
-{% block subheader %}
-{% include "modules/blogsubheader.html" %}
-{% endblock %}
-
 {% block content %}
 <article>
   <div class="article_title">
