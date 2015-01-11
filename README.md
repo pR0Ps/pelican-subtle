@@ -7,6 +7,8 @@ Subtle Pelican Theme
 
 You can see the theme in action on [my site](http://cmetcalfe.ca/).
 
+![theme screenshot](https://github.com/pR0Ps/pelican-subtle/raw/master/screenshot.png)
+
 ## Features
 
 - Clean, responsive design
