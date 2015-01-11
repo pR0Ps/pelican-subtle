@@ -71,7 +71,17 @@
         {% else %}
 
         {# Choosing a specific link icon #}
-        {%   if temp.startswith('bitbucket.org') %}{% set class = 'fa-bitbucket' %}
+        {%   if temp.startswith('bitcoin:') %}{% set class = 'fa-bitcoin' %}
+        {% elif temp.startswith('irc:') %}{% set class = 'fa-comments' %}
+        {% elif temp.startswith('mailto:') %}{% set class = 'fa-envelope' %}
+        {% elif temp.startswith('skype:') %}{% set class = 'fa-skype' %}
+
+        {% elif temp.endswith('.pdf') or
+                temp.endswith('.txt') or
+                temp.endswith('.doc') or
+                temp.endswith('.docx') %}{% set class = 'fa-file-text' %}
+
+        {% elif temp.startswith('bitbucket.org') %}{% set class = 'fa-bitbucket' %}
         {% elif temp.startswith('facebook.com') %}{% set class = 'fa-facebook' %}
         {% elif temp.startswith('github.com') %}{% set class = 'fa-github' %}
         {% elif temp.startswith('linkedin.com') %}{% set class = 'fa-linkedin' %}
@@ -81,18 +91,12 @@
         {% elif temp.startswith('twitter.com') %}{% set class = 'fa-twitter' %}
         {% elif temp.startswith('vimeo.com') %}{% set class = 'fa-vimeo-square' %}
         {% elif temp.startswith('youtube.com') %}{% set class = 'fa-youtube' %}
-        
-        {% elif temp.endswith('.pdf') %}{% set class = 'fa-file-text' %}
-        
+
         {% elif '.stackexchange.com' in temp %}{% set class = 'fa-stack-exchange' %}
         {% elif '.tumblr.com' in temp %}{% set class = 'fa-tumblr' %}
-        
-        {% elif temp.startswith('bitcoin:') %}{% set class = 'fa-bitcoin' %}
-        {% elif temp.startswith('irc:') %}{% set class = 'fa-comments' %}
-        {% elif temp.startswith('mailto:') %}{% set class = 'fa-envelope' %}
-        {% elif temp.startswith('skype:') %}{% set class = 'fa-skype' %}
+
         {% endif %}
-        
+
         <li><a href="{{ link }}" target="_blank">{{ name }}<i class="fa {{ class }} fa-lg"></i></a></li>
         {% endif %}
         {% endfor %}
