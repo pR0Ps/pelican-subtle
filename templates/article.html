@@ -60,7 +60,7 @@
   {% if FUZZY_DATES %}
   {% block scripts %}
   {{ super() }}
-  <script type="text/javascript">lw_timeago.doReplace()</script>
+  <script type="text/javascript">window.addEventListener('load', function(){lw_timeago.doReplace()})</script>
   {% endblock %}
   {% endif %}
 

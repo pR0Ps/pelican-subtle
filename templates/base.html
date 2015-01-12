@@ -161,15 +161,16 @@
   {% block scripts %}
   {% if SCROLL_TO_CONTENT %}
   <script type="text/javascript">
+    window.addEventListener('load', function(){
     if (window.location.pathname != '/' && window.location.pathname != '/index.html'){
       window.scroll(0, document.getElementById('main').offsetTop);
-    }
+    }})
   </script>
   {% endif %}
 
   {% if MANGLE_EMAILS %}
   <script type="text/javascript">
-    window.onload = function(){
+    window.addEventListener('load', function(){
       var e = document.querySelectorAll(".email");
       for (var i = 0; i < e.length; i++) {
         var email = e[i].getAttribute("data-email")
@@ -180,7 +181,7 @@
           e[i].removeAttribute("class");
         }
       }
-    };
+    })
   </script>
   {% endif %}
   {% endblock scripts %}
