@@ -172,10 +172,13 @@
     window.onload = function(){
       var e = document.querySelectorAll(".email");
       for (var i = 0; i < e.length; i++) {
-        e[i].href = e[i].getAttribute("data-email").split("").reverse().join("");
-        e[i].removeAttribute("data-email");
-        e[i].removeAttribute("title");
-        e[i].removeAttribute("class");
+        var email = e[i].getAttribute("data-email")
+        if (email){
+          e[i].href = email.split("").reverse().join("");
+          e[i].removeAttribute("data-email");
+          e[i].removeAttribute("title");
+          e[i].removeAttribute("class");
+        }
       }
     };
   </script>
