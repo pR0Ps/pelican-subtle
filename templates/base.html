@@ -14,7 +14,7 @@
   {% endif %}
 
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,7 +71,7 @@
         {% else %}
 
         {# Choosing a specific link icon #}
-        {%   if temp.startswith('bitcoin:') %}{% set class = 'fa-bitcoin' %}
+        {%   if temp.startswith('bitcoin:') %}{% set class = 'fa-btc' %}
         {% elif temp.startswith('irc:') %}{% set class = 'fa-comments' %}
         {% elif temp.startswith('mailto:') %}{% set class = 'fa-envelope' %}
         {% elif temp.startswith('skype:') %}{% set class = 'fa-skype' %}
@@ -82,14 +82,27 @@
                 temp.endswith('.docx') %}{% set class = 'fa-file-text' %}
 
         {% elif temp.startswith('bitbucket.org') %}{% set class = 'fa-bitbucket' %}
+        {% elif temp.startswith('delicious.com') %}{% set class = 'fa-delicious' %}
+        {% elif temp.startswith('deviantart.com') %}{% set class = 'fa-deviantart' %}
         {% elif temp.startswith('facebook.com') %}{% set class = 'fa-facebook' %}
+        {% elif temp.startswith('flickr.com') %}{% set class = 'fa-flickr' %}
+        {% elif temp.startswith('foursquare.com') %}{% set class = 'fa-foursquare' %}
         {% elif temp.startswith('github.com') %}{% set class = 'fa-github' %}
+        {% elif temp.startswith('instagram.com') %}{% set class = 'fa-instagram' %}
+        {% elif temp.startswith('last.fm') %}{% set class = 'fa-lastfm' %}
         {% elif temp.startswith('linkedin.com') %}{% set class = 'fa-linkedin' %}
+        {% elif temp.startswith('news.ycombinator.com') %}{% set class = 'fa-hacker-news' %}
         {% elif temp.startswith('pinterest.com') %}{% set class = 'fa-pinterest' %}
         {% elif temp.startswith('plus.google.com') %}{% set class = 'fa-google-plus' %}
+        {% elif temp.startswith('reddit.com') %}{% set class = 'fa-reddit' %}
+        {% elif temp.startswith('spotify.com') %}{% set class = 'fa-spotify' %}
         {% elif temp.startswith('stackoverflow.com') %}{% set class = 'fa-stack-overflow' %}
+        {% elif temp.startswith('steamcommunity.com') %}{% set class = 'fa-steam' %}
+        {% elif temp.startswith('soundcloud.com') %}{% set class = 'fa-soundcloud' %}
+        {% elif temp.startswith('twitch.tv') %}{% set class = 'fa-twitch' %}
         {% elif temp.startswith('twitter.com') %}{% set class = 'fa-twitter' %}
         {% elif temp.startswith('vimeo.com') %}{% set class = 'fa-vimeo-square' %}
+        {% elif temp.startswith('vine.co') %}{% set class = 'fa-vine' %}
         {% elif temp.startswith('youtube.com') %}{% set class = 'fa-youtube' %}
 
         {% elif '.stackexchange.com' in temp %}{% set class = 'fa-stack-exchange' %}
