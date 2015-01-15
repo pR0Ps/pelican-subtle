@@ -6,6 +6,10 @@
     {%- if article.tags -%}{{', '}}{%- endif -%}
   {%- endif -%}
   {{article.tags|join(', ') }}">
+
+  {% if FUZZY_DATES %}
+  <script src="{{ SITEURL }}/theme/js/lw-timeago/lw-timeago.js" type="text/javascript"></script>
+  {% endif %}
 {% endblock %}
 
 {% block title %}{{ article.title|striptags|escape }} | {{ SITENAME }}{% endblock %}
@@ -20,12 +24,12 @@
     {{ article.content }}
   </div>
   <div class="article_meta">
-    <p>Posted <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+    <p>Posted <time data-timeago datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
     {% if article.author %}
      by {% if AUTHORS_URL %} <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>{% else %}{{ article.author}}{% endif %}
     {% endif %}
     {% if article.modified %}
-    <p>Last updated <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></p>
+    <p>Last updated <time data-timeago datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></p>
     {% endif %}
     </p>
     <p>
@@ -56,14 +60,6 @@
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
   {% endif %}
-
-  {% if FUZZY_DATES %}
-  {% block scripts %}
-  {{ super() }}
-  <script type="text/javascript">window.addEventListener('load', function(){lw_timeago.doReplace()})</script>
-  {% endblock %}
-  {% endif %}
-
 </article>
 {% endblock %}
 
