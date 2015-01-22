@@ -199,6 +199,36 @@ main {
         }
       }
 
+      div.admonition {
+
+        border-width: 1px 1px 1px 7px;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: @code-border;
+        border-left-color: @dark-grey;
+        background-color: @code-background;
+
+        &.update, &.hint, &.important, &.note, &.tip {
+          border-left-color: @accent;
+        }
+
+        &.warning, &.attention, &.caution, &.danger {
+          border-left-color: red;
+        }
+
+        p {
+          margin: 0px;
+          padding: 10px 15px;
+        }
+
+        p.admonition-title{
+          text-transform: uppercase;
+          font-weight: bold;
+          padding: 5px 15px;
+          border-bottom: 1px solid @code-border;
+        }
+      }
+
       blockquote {
         margin: 22px 2px 22px 2px;
         padding-left: @horiz_pad;
