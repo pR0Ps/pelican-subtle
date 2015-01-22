@@ -1,9 +1,13 @@
-@red: #ff0000;
 @black: #000000;
 @white: #ffffff;
 @light-grey: #eeeeee;
 @med-grey: #5f5f5f;
 @dark-grey: #202020;
+
+@code-border: #c7c7c7;
+@code-background: #f6f6f6;
+@code-linebg: #dddddd;
+
 @blue: #0e94ec;
 @accent: @blue;
 
@@ -139,25 +143,60 @@ main {
         text-decoration: underline;
       }
 
-      code {
-        margin: 2px;
-        padding: 0;
-        color: @black;
+      @codeformat: {
+        color: black;
         font-size: 14px;
         font-family: @mono;
+      };
+
+      code {
+        @codeformat();
+        padding: 0px 2px;
         background: @light-grey;
       }
 
       pre {
-        margin: 22px 2px 22px 2px;
-        padding: 6px;
-        color: @black;
-        border-left: 3px solid @accent;
-        font-size: 14px;
-        font-family: @mono;
-        background: @light-grey;
+        @codeformat();
         line-height: 1.125em;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+      }
+
+      div.highlight pre {
+        padding-left: 10px;
         overflow-x: auto;
+        border: 1px solid @code-border;
+        border-left: 3px solid @accent;
+        background: @code-background;
+      }
+
+      /* Line numbers are enabled*/
+      table.highlighttable {
+        table-layout: fixed;
+        width: 100%;
+        border: 1px solid @code-border;
+        border-collapse: collapse;
+
+        pre {
+          border: none;
+        }
+
+        td.linenos {
+          width: 30px;
+          overflow: hidden;
+          text-align: right;
+          border-left: 3px solid @accent;
+          border-right: 1px solid @code-border;
+          background: @code-linebg;
+          vertical-align:top;
+
+          div.linenodiv pre {
+            padding-right: 4px;
+            float: right;
+          }
+        }
       }
 
       blockquote {
