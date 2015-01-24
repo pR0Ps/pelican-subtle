@@ -1,6 +1,6 @@
 /* See available classes at https://bitbucket.org/birkenfeld/pygments-main/src/default/pygments/token.py */
 
-.hll { background-color: #f8f8f8; border: 1px solid #ccc; margin: 0px -1px; border-radius: 3px; }
+.hll { background-color: #ffd800; padding-right:100%; }
 .w { color: #bbbbbb; }
 /* .esc (Escape) */
 .err { color: #a61717; background-color: #e3d2d2; }
