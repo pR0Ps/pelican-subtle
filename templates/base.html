@@ -63,7 +63,7 @@
         {% set class = 'fa-external-link-square' %}
 
         {% if MANGLE_EMAILS and temp.startswith('mailto:') %}
-        <li><a data-email="{{ link|reverse }}" title="You need javascript enabled to view this email" href="#" class="email" target="_blank">{{ name }}<i class="fa fa-envelope fa-lg"></i></a></li>
+        <li><a data-email="{{ link|reverse }}" title="You need javascript enabled to view this email" href="#" class="email">{{ name }}<i class="fa fa-envelope fa-lg"></i></a></li>
         {% else %}
 
         {# Choosing a specific link icon #}
@@ -106,13 +106,13 @@
 
         {% endif %}
 
-        <li><a href="{{ link }}" target="_blank">{{ name }}<i class="fa {{ class }} fa-lg"></i></a></li>
+        <li><a href="{{ link }}">{{ name }}<i class="fa {{ class }} fa-lg"></i></a></li>
         {% endif %}
         {% endfor %}
       </ul>
       <ul>
         {% for name, link in LINKS %}
-        <li><a href="{{ link }}" target="_blank">{{ name }}<i class="fa fa-external-link-square fa-lg"></i></a></li>
+        <li><a href="{{ link }}">{{ name }}<i class="fa fa-external-link-square fa-lg"></i></a></li>
         {% endfor %}
       </ul>
     </div>
@@ -150,7 +150,7 @@
     {% endblock %}
 
     <div id="ending_message">
-        <p>&copy; {{ AUTHOR }}. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme is <a href="https://github.com/pR0Ps/pelican-subtle" target="_blank">subtle</a> by <a href="http://cmetcalfe.ca" target="_blank">Carey Metcalfe</a>. Based on <a href="https://github.com/giulivo/pelican-svbhack" target="_blank">svbhack</a> by Giulio Fidente.</p>
+        <p>&copy; {{ AUTHOR }}. Built using <a href="http://getpelican.com">Pelican</a>. Theme is <a href="https://github.com/pR0Ps/pelican-subtle">subtle</a> by <a href="http://cmetcalfe.ca">Carey Metcalfe</a>. Based on <a href="https://github.com/giulivo/pelican-svbhack">svbhack</a> by Giulio Fidente.</p>
     </div>
   </main>
 
