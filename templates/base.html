@@ -63,7 +63,7 @@
         {% set class = 'fa-external-link-square' %}
 
         {% if MANGLE_EMAILS and temp.startswith('mailto:') %}
-        <li><a data-email="{{ link|reverse }}" title="You need javascript enabled to view this email" href="#" class="email">{{ name }}<i class="fa fa-envelope fa-lg"></i></a></li>
+        <li><a data-email="{{ link|reverse }}" title="You need javascript enabled to view this email" class="email">{{ name }}<i class="fa fa-envelope fa-lg"></i></a></li>
         {% else %}
 
         {# Choosing a specific link icon #}
