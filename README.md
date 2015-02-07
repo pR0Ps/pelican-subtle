@@ -15,7 +15,6 @@ You can see the theme in action on [my site](http://cmetcalfe.ca/).
 - Profile image and tagline
 - Syntax highlighting for pre blocks
 - Google Analytics (new Unified Analytics)
-- Google Authorship
 - Supports displaying a custom list of links with icons in the sidebar
 - Global keyword support
 - Fuzzy date display using Javascript
@@ -34,7 +33,6 @@ This theme supports a number of custom variables:
 
 - `GOOGLE_ANALYTICS_ID`: Your Google Analytics UA-XXXXXXXX-X code (`None` to disable analytics).
 - `GOOGLE_ANALYTICS_PROP`: Your Google Analytics property name (`None` to disable analytics).
-- `GOOGLE_PLUS_URL`: A link to your Google+ profile. Used for the [Google Authorship](http://www.google.com/insidesearch/features/authorship/index.html) feature.
 - `USER_LOGO_URL`: The image to display as the profile image. Can be local or a remote URL.
 - `DISQUS_SITENAME`: Set this to enable Disqus comments on articles.
 - `DISQUS_COLLAPSED`: Set to `True` to have article comments hidden by default. Clicking a link on the page will load them.

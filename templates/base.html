@@ -17,10 +17,6 @@
   <meta name="author" content="{{ AUTHOR }}">
   <meta name="description" content="{% block description %}Posts by {{ AUTHOR }}{% endblock %}">
 
-  {% if GOOGLE_PLUS_URL %}
-  <link rel="author" href="{{ GOOGLE_PLUS_URL }}?rel=author">
-  {% endif %}
-
   {% if FEED_ALL_ATOM %}
   <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
   {% endif %}
