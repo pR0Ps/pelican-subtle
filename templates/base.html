@@ -88,6 +88,14 @@
   <i class="fa {{ class }} fa-lg"></i>
 {%- endmacro -%}
 
+{%- macro display_link(name, link, text) -%}
+  {%- if MANGLE_EMAILS and link.startswith('mailto:') -%}
+  <a data-email="{{ link|reverse }}"{% if not text %} data-title="{{ name }}"{% endif %} title="You need javascript enabled to view this email" class="email">{{ text }}{{ get_icon(link) }}</a>
+  {%- else -%}
+  <a href="{{ link }}"{% if not text %} title="{{ name }}"{% endif %}>{{ text }}{{ get_icon(link) }}</a>
+  {%- endif -%}
+{%- endmacro -%}
+
 <body>
   <aside>
     <div id="user_meta">
@@ -100,16 +108,12 @@
       <p>{{ TAGLINE }}</p>
       <div class="social">
         {% for name, link in SOCIAL %}
-        {% if MANGLE_EMAILS and link.startswith('mailto:') %}
-        <a data-email="{{ link|reverse }}" data-title="{{ name }}" title="You need javascript enabled to view this email" class="email">{{ get_icon(link) }}</a>
-        {% else %}
-        <a href="{{ link }}" title="{{ name }}">{{ get_icon(link) }}</a>
-        {% endif %}
+          {{ display_link(name, link, "") }}
         {% endfor %}
       </div>
       <ul>
         {% for name, link in LINKS %}
-        <li><a href="{{ link }}">{{ name }}{{ get_icon(link) }}</a></li>
+        <li>{{ display_link(name, link, name) }}</li>
         {% endfor %}
       </ul>
     </div>
@@ -165,13 +169,18 @@
       var e = document.querySelectorAll(".email");
       for (var i = 0; i < e.length; i++) {
         var email = e[i].getAttribute("data-email")
-        var title = e[i].getAttribute("data-title") || "Email"
+        var title = e[i].getAttribute("data-title")
         if (email){
           e[i].href = email.split("").reverse().join("");
-          e[i].setAttribute("title", title);
           e[i].removeAttribute("data-email");
           e[i].removeAttribute("data-title");
           e[i].removeAttribute("class");
+          if (title){
+            e[i].setAttribute("title", title);
+          }
+          else{
+            e[i].removeAttribute("title");
+          }
         }
       }
     })
