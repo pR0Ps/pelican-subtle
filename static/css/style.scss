@@ -1,67 +1,67 @@
 @charset "UTF-8";
 
-@black: #000000;
-@white: #ffffff;
-@light-grey: #eeeeee;
-@med-grey: #5f5f5f;
-@dark-grey: #202020;
+$black: #000000;
+$white: #ffffff;
+$light-grey: #eeeeee;
+$med-grey: #5f5f5f;
+$dark-grey: #202020;
 
-@code-border: #c7c7c7;
-@code-background: #f6f6f6;
-@code-linebg: #dddddd;
+$code-border: #c7c7c7;
+$code-background: #f6f6f6;
+$code-linebg: #dddddd;
 
-@blue: #0e94ec;
-@accent: @blue;
+$blue: #0e94ec;
+$accent: $blue;
 
-@import (css) "//fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono";
-@sans: 'Ubuntu', sans-serif;
-@mono: 'Ubuntu Mono', monospace;
+@import url("//fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono");
+$sans: 'Ubuntu', sans-serif;
+$mono: 'Ubuntu Mono', monospace;
 
-@border_color: #c2c2c2;
-@pag_label_size: 60px;
-@logo_size: 150px;
+$border_color: #c2c2c2;
+$pag_label_size: 60px;
+$logo_size: 150px;
 
-@content_size: 640px;
-@horiz_pad: 40px;
+$content_size: 640px;
+$horiz_pad: 40px;
 
 //The minimum size the screen can be without scaling the main content
-@min_screen: floor(((@content_size + @horiz_pad * 2) * 1.33));
+$min_screen: floor((($content_size + $horiz_pad * 2) * 1.33));
 
 body {
   margin: 0;
   padding: 0;
-  background-color: @white;
-  color: @dark-grey;
-  font-family: @sans;
+  background-color: $white;
+  color: $dark-grey;
+  font-family: $sans;
   font-size: 16px;
   min-width: 300px;
 }
 
 a {
-  color: @black;
+  color: $black;
   text-decoration: none;
 }
 
 a[href]:not(.nohover) {
   &:hover{
-    color: @accent;
+    color: $accent;
   }
 }
 
 hr {
-  background-color: @border_color;
+  background-color: $border_color;
   height: 1px;
   border: none;
 }
 
 aside {
   div#user_meta {
-    padding: @horiz_pad 20px @horiz_pad 20px;
+    padding: $horiz_pad 20px $horiz_pad 20px;
     text-align: center;
 
     img#logo {
-        width: @logo_size;
-        height: @logo_size;
+        width: $logo_size;
+        height: $logo_size;
         border-radius: 50%;
     }
 
@@ -114,11 +114,11 @@ main {
   margin: auto;
 
   header {
-    padding: 0px @horiz_pad 0px @horiz_pad;
-    border-top: @border_color 1px solid;
-    border-bottom: @border_color 1px solid;
+    padding: 0px $horiz_pad 0px $horiz_pad;
+    border-top: $border_color 1px solid;
+    border-bottom: $border_color 1px solid;
     text-align: center;
-    color: @med-grey;
+    color: $med-grey;
 
     p {
       font-weight: bold;
@@ -127,22 +127,22 @@ main {
     }
 
     p#header {
-      color: @black;
+      color: $black;
     }
 
     p:not(#header){
       a {
-        color: @med-grey;
+        color: $med-grey;
         &:hover{
-          color: @accent;
+          color: $accent;
         }
       }
     }
   }
 
   article {
-    padding: 10px @horiz_pad 10px @horiz_pad;
-    max-width: @content_size;
+    padding: 10px $horiz_pad 10px $horiz_pad;
+    max-width: $content_size;
     margin: auto;
 
     div.article_title {
@@ -154,20 +154,20 @@ main {
         text-decoration: underline;
       }
 
-      @codeformat: {
+      @mixin codeformat {
         color: black;
         font-size: 14px;
-        font-family: @mono;
-      };
+        font-family: $mono;
+      }
 
       code {
-        @codeformat();
+        @include codeformat;
         padding: 2px 3px;
-        background: @light-grey;
+        background: $light-grey;
       }
 
       pre {
-        @codeformat();
+        @include codeformat;
         line-height: 1.125em;
         margin-bottom: 0px;
         margin-top: 0px;
@@ -178,16 +178,16 @@ main {
       div.highlight pre {
         padding-left: 10px;
         overflow-x: auto;
-        border: 1px solid @code-border;
-        border-left: 3px solid @accent;
-        background: @code-background;
+        border: 1px solid $code-border;
+        border-left: 3px solid $accent;
+        background: $code-background;
       }
 
       /* Line numbers are enabled*/
       table.highlighttable {
         table-layout: fixed;
         width: 100%;
-        border: 1px solid @code-border;
+        border: 1px solid $code-border;
         border-collapse: collapse;
 
         pre {
@@ -202,9 +202,9 @@ main {
           width: 30px;
           overflow: hidden;
           text-align: right;
-          border-left: 3px solid @accent;
-          border-right: 1px solid @code-border;
-          background: @code-linebg;
+          border-left: 3px solid $accent;
+          border-right: 1px solid $code-border;
+          background: $code-linebg;
           vertical-align:top;
 
           div.linenodiv pre {
@@ -219,12 +219,12 @@ main {
         border-width: 1px 1px 1px 7px;
         border-radius: 10px;
         border-style: solid;
-        border-color: @code-border;
-        border-left-color: @dark-grey;
-        background-color: @code-background;
+        border-color: $code-border;
+        border-left-color: $dark-grey;
+        background-color: $code-background;
 
         &.update, &.hint, &.important, &.note, &.tip {
-          border-left-color: @accent;
+          border-left-color: $accent;
         }
 
         &.warning, &.attention, &.caution, &.danger {
@@ -240,40 +240,21 @@ main {
           text-transform: uppercase;
           font-weight: bold;
           padding: 5px 15px;
-          border-bottom: 1px solid @code-border;
+          border-bottom: 1px solid $code-border;
         }
       }
 
       blockquote {
         margin: 22px 2px 22px 2px;
-        padding-left: @horiz_pad;
-        color: @med-grey;
+        padding-left: $horiz_pad;
+        color: $med-grey;
         font-style: italic;
       }
-
-      .footnote-reference {
-        vertical-align: super;
-        font-size: 12px;
-        text-decoration: none;
-        line-height: 1;
-      }
-
-      .footnote {
-        font-size: smaller;
-        .fn-backref{
-          margin-right: 5px;
-          text-decoration: none;
-        }
-      }
-    }
-
-    div.gist {
-      line-height: .875em;
     }
 
     div.article_meta {
       font-size: 12px;
-      color: @med-grey;
+      color: $med-grey;
     }
 
     div#article_comments{
@@ -287,8 +268,8 @@ main {
   }
 
   footer {
-    border-top: @border_color 1px solid;
-    padding: 30px @horiz_pad 30px @horiz_pad;
+    border-top: $border_color 1px solid;
+    padding: 30px $horiz_pad 30px $horiz_pad;
 
     div#paginator {
       font-weight: bold;
@@ -302,7 +283,7 @@ main {
       }
 
       span {
-        width: @pag_label_size;
+        width: $pag_label_size;
       }
 
       span#left {
@@ -318,14 +299,14 @@ main {
   }
 
   div#ending_message {
-    border-top: @border_color 1px solid;
-    padding: 0 @horiz_pad 0 @horiz_pad;
-    color: @med-grey;
+    border-top: $border_color 1px solid;
+    padding: 0 $horiz_pad 0 $horiz_pad;
+    color: $med-grey;
     font-size: 10px;
   }
 }
 
-@media screen and (min-width: @min_screen) {
+@media screen and (min-width: $min_screen) {
   aside {
     width: 25%;
     height: 100%;
@@ -350,24 +331,24 @@ main {
     left: 25%;
     width: 75%;
     margin-left: -1px;
-    border-left: @border_color 1px solid;
+    border-left: $border_color 1px solid;
     overflow-x: hidden;
     overflow-y: hidden;
 
     header {
-      padding: 10px @horiz_pad 10px @horiz_pad;
+      padding: 10px $horiz_pad 10px $horiz_pad;
       border-top: 0;
       text-align: left;
     }
 
     article {
-      width: @content_size;
+      width: $content_size;
       margin: 0;
     }
 
     footer{
       div#paginator {
-        width: @content_size;
+        width: $content_size;
       }
     }
   }

@@ -1,3 +1,6 @@
 [submodule "static/js/lw-timeago"]
 	path = static/js/lw-timeago
 	url = https://github.com/pR0Ps/lw-timeago.git
+[submodule "plugins/assets"]
+	path = plugins/assets
+	url = https://github.com/pR0Ps/pelican-assets.git
