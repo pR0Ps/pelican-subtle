@@ -7,7 +7,7 @@
   <meta name="author" content="{{ AUTHOR }}">
   <meta name="description" content="{% block description %}Posts by {{ AUTHOR }}{% endblock %}">
 
-  {% assets filters="libsass,cssmin", output="css/style.min.css", "css/style.scss", "css/pygments.css" %}
+  {% assets filters="libsass,cssmin", output="css/style.%(version)s.min.css", "css/style.scss", "css/pygments.css" %}
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ ASSET_URL }}">
   {% endassets %}
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

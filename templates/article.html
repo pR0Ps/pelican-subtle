@@ -8,7 +8,7 @@
   {{article.tags|join(', ') }}">
 
   {% if FUZZY_DATES %}
-  {% assets filters="slimit", output="js/lw-timeago.min.js", "js/lw-timeago/lw-timeago.js" %}
+  {% assets filters="slimit", output="js/lw-timeago.%(version)s.min.js", "js/lw-timeago/lw-timeago.js" %}
   <script src="{{ SITEURL }}/{{ ASSET_URL }}" type="text/javascript"></script>
   {% endassets%}
   {% endif %}
