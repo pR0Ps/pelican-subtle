@@ -12,7 +12,7 @@ You can see the theme in action on [my site](http://cmetcalfe.ca/) ([site source
 ## Features
 
 - Clean, responsive design. Scales to fit any screen
-- Fully HTML5 complient
+- Fully HTML5 compliant
 - Fully usable without Javascript (although enabling it adds more functionality)
 - Ability to hide email addresses from spambots
 - Syntax highlighting for code blocks
@@ -47,7 +47,7 @@ activated in `pelicanconf.py`.
 
 ## pelicanconf.py
 
-When developing locally, you may want to set `SITEURL` to somrething like `http://localhost:8000`
+When developing locally, you may want to set `SITEURL` to something like `http://localhost:8000`
 
 This theme supports a number of custom variables:
 
