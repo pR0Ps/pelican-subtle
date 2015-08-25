@@ -54,6 +54,10 @@ hr {
   border: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 aside {
   div#user_meta {
     padding: $horiz_pad 20px $horiz_pad 20px;
