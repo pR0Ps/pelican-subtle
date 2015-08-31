@@ -120,7 +120,7 @@
       <p id="header">
       <a href="{{ SITEURL }}">Home</a>
       
-      {% for p in pages|sort %}
+      {% for p in pages %}
       {% if p.url != "index.html" %}
       &#124; <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
       {% endif %}
