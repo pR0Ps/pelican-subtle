@@ -7,6 +7,7 @@
   <meta name="author" content="{{ AUTHOR }}">
   <meta name="description" content="{% block description %}Posts by {{ AUTHOR }}{% endblock %}">
 
+  {% block base %}{% endblock %}
   {% assets filters="pyscss,cssmin", output="css/style.%(version)s.min.css", "css/style.scss", "css/pygments.css" %}
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ ASSET_URL }}">
   {% endassets %}
