@@ -8,9 +8,14 @@
   <meta name="description" content="{% block description %}Posts by {{ AUTHOR }}{% endblock %}">
 
   {% block base %}{% endblock %}
-  {% assets filters="pyscss,cssmin", output="css/style.%(version)s.min.css", "css/style.scss", "css/pygments.css" %}
+  {% assets filters="pyscss,cssmin", output="css/styles.%(version)s.min.css", "css/style.scss", "css/pygments.css" %}
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ ASSET_URL }}">
   {% endassets %}
+
+  {% assets filters="slimit", output="js/scripts.%(version)s.min.js", "js/lw-timeago/lw-timeago.js", "js/scroll.js", "js/email.js" %}
+  <script src="{{ SITEURL }}/{{ ASSET_URL }}" type="text/javascript"></script>
+  {% endassets%}
+
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   {% if FEED_ALL_ATOM %}
@@ -153,33 +158,12 @@
 
   {% block scripts %}
   <script type="text/javascript">
-    window.addEventListener('load', function(){
-    if (window.location.pathname != '/' && window.location.pathname != '/index.html'){
-      window.scroll(0, document.getElementById('main').offsetTop);
-    }})
+    window.addEventListener('load', skipHeader)
   </script>
 
   {% if MANGLE_EMAILS %}
   <script type="text/javascript">
-    window.addEventListener('load', function(){
-      var e = document.querySelectorAll(".email");
-      for (var i = 0; i < e.length; i++) {
-        var email = e[i].getAttribute("data-email")
-        var title = e[i].getAttribute("data-title")
-        if (email){
-          e[i].href = email.split("").reverse().join("");
-          e[i].removeAttribute("data-email");
-          e[i].removeAttribute("data-title");
-          e[i].removeAttribute("class");
-          if (title){
-            e[i].setAttribute("title", title);
-          }
-          else{
-            e[i].removeAttribute("title");
-          }
-        }
-      }
-    })
+  window.addEventListener('load', unmangleEmail)
   </script>
   {% endif %}
   {% endblock scripts %}
