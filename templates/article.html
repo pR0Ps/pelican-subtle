@@ -46,11 +46,12 @@
   <div id="article_comments">
     <div id="disqus_thread">
       {% if DISQUS_COLLAPSED %}
-      <a href="javascript:loadDisqus()"><i class="fa fa-comments fa-lg"></i>Click to load comments</a>
+      <a href="javascript:loadDisqus()"><i class="fa fa-comments fa-lg"></i>Click to load <span class="disqus-comment-count" data-disqus-identifier="{{ article.url }}">comments</span></a>
       {% endif %}
     </div>
   </div>
 
+  <script id="dsq-count-scr" src="https://{{ DISQUS_SITENAME }}.disqus.com/count.js" async></script>
   <script type="text/javascript">
     var disqus_config = function () {
         this.page.identifier = "{{ article.url }}";
