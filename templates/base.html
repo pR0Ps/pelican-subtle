@@ -125,12 +125,14 @@
       {% block header %}
       <p id="header">
       <a href="{{ SITEURL }}">Home</a>
-      
+
+      {% if DISPLAY_PAGES_ON_MENU %}
       {% for p in pages %}
       {% if p.url != "index.html" %}
       &#124; <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
       {% endif %}
       {% endfor %}
+      {% endif %}
       {% if INDEX_SAVE_AS and INDEX_SAVE_AS != "index.html" %}
       &#124; <a href="{{ SITEURL }}/{{ INDEX_SAVE_AS }}">Blog</a>
       {% endif %}
