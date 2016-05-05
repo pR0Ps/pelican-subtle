@@ -91,9 +91,9 @@
 
 {%- macro display_link(name, link, text) -%}
   {%- if MANGLE_EMAILS and link.startswith('mailto:') -%}
-  <a data-email="{{ link|reverse }}"{% if not text %} data-title="{{ name }}"{% endif %} title="You need javascript enabled to view this email" class="email">{{ text }}{{ get_icon(link) }}</a>
+  <a data-email="{{ link|reverse }}"{% if not text %} data-title="{{ name }}"{% endif %} title="You need javascript enabled to view this email" class="email" rel="noopener noreferrer">{{ text }}{{ get_icon(link) }}</a>
   {%- else -%}
-  <a href="{{ link }}"{% if not text %} title="{{ name }}"{% endif %}>{{ text }}{{ get_icon(link) }}</a>
+  <a href="{{ link }}"{% if not text %} title="{{ name }}"{% endif %} target="_blank" rel="noopener noreferrer">{{ text }}{{ get_icon(link) }}</a>
   {%- endif -%}
 {%- endmacro -%}
 
