@@ -1,0 +1,22 @@
+<div class="article_meta">
+  <p>Posted <time data-timeago datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+  {% if article.author %}
+   by {% if AUTHORS_URL %} <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>{% else %}{{ article.author}}{% endif %}
+  {% endif %}
+  </p>
+  {% if article.modified %}
+  <p>Last updated <time data-timeago datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></p>
+  {% endif %}
+  <p>
+  {% if CATEGORY_URL %}
+  Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+  {% if TAG_URL and article.tags %}&ndash;&ndash;{% endif %}
+  {% endif %}
+  {% if TAG_URL and article.tags %}
+  Tags:
+    {% for tag in article.tags %}
+    <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+    {% endfor %}
+  </p>
+  {% endif %}
+</div>
