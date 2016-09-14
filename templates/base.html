@@ -81,6 +81,7 @@
   {% elif temp.startswith('vimeo.com') %}{% set class = 'fa-vimeo-square' %}
   {% elif temp.startswith('vine.co') %}{% set class = 'fa-vine' %}
   {% elif temp.startswith('youtube.com') %}{% set class = 'fa-youtube' -%}
+  {% elif temp.startswith('keybase.io') %}{% set class = 'fa-key' -%}
 
   {%- elif '.stackexchange.com' in temp %}{% set class = 'fa-stack-exchange' %}
   {% elif '.tumblr.com' in temp %}{% set class = 'fa-tumblr' %}
