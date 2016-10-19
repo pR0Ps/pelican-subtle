@@ -11,8 +11,8 @@ $code-border: #c7c7c7;
 $code-background: #f6f6f6;
 $code-linebg: #dddddd;
 
-$blue: #0e94ec;
-$accent: $blue;
+$accent: #0e94ec;
+$danger: red;
 
 @import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono);
 $sans: 'Roboto', sans-serif;
@@ -25,6 +25,14 @@ $logo_size: 150px;
 $content_size: 640px;
 $horiz_pad: 40px;
 
+$main_font_size: 1rem;
+$nav_font_size: 1rem;
+$subtitle_font_size: 0.9rem;
+$code_font_size: 0.9rem;
+$article_meta_font_size: 0.8rem;
+$pagination_font_size: 0.9rem;
+$footer_font_size: 0.7rem;
+
 //The minimum size the screen can be without scaling the main content
 $min_screen: floor((($content_size + $horiz_pad * 2) * 1.33));
 
@@ -34,7 +42,7 @@ body {
   background-color: $bg-grey;
   color: $dark-grey;
   font-family: $sans;
-  font-size: 16px;
+  font-size: $main_font_size;
   min-width: 300px;
 }
 
@@ -79,7 +87,7 @@ aside {
 
     p {
       margin: 0px;
-      font-size: 14px;
+      font-size: $subtitle_font_size;
     }
 
     i {
@@ -100,7 +108,6 @@ aside {
     ul {
       margin: 0px;
       padding-left: 0px;
-      font-size: 16px;
       list-style-type: none;
 
       li {
@@ -130,7 +137,7 @@ main {
 
     p {
       font-weight: bold;
-      font-size: 16px;
+      font-size: $nav_font_size;
       text-transform: uppercase;
     }
 
@@ -164,13 +171,13 @@ main {
 
       @mixin codeformat {
         color: black;
-        font-size: 14px;
+        font-size: $code_font_size;
         font-family: $mono;
       }
 
       code {
         @include codeformat;
-        padding: 2px 3px;
+        padding: 1px 3px;
         background: $light-grey;
       }
 
@@ -191,7 +198,7 @@ main {
         background: $code-background;
       }
 
-      /* Line numbers are enabled*/
+      /* Line numbers are enabled */
       table.highlighttable {
         table-layout: fixed;
         width: 100%;
@@ -236,7 +243,7 @@ main {
         }
 
         &.warning, &.attention, &.caution, &.danger {
-          border-left-color: red;
+          border-left-color: $danger;
         }
 
         p {
@@ -261,7 +268,7 @@ main {
     }
 
     div.article_meta {
-      font-size: 12px;
+      font-size: $article_meta_font_size;
       color: $med-grey;
     }
 
@@ -281,7 +288,7 @@ main {
 
     div#paginator {
       font-weight: bold;
-      font-size: 15px;
+      font-size: $pagination_font_size;
       text-transform: uppercase;
       overflow: auto;
       text-align: center;
@@ -310,7 +317,7 @@ main {
     border-top: $border_color 1px solid;
     padding: 0 $horiz_pad 0 $horiz_pad;
     color: $med-grey;
-    font-size: 10px;
+    font-size: $footer_font_size;
   }
 }
 
