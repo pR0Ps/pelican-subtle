@@ -34,9 +34,7 @@
     {{tags|join(', ', attribute='0') }}">
   {% endblock %}
 
-  <title>
-    {% block title %}{{ SITENAME }}{% endblock %}
-  </title>
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
 
   {% include "modules/analytics.html" %}
 </head>

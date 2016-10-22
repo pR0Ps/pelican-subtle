@@ -53,6 +53,7 @@ This theme supports a number of custom variables:
 
 - `GOOGLE_ANALYTICS_ID`: Your Google Analytics UA-XXXXXXXX-X code (`None` to disable analytics).
 - `GOOGLE_ANALYTICS_PROP`: Your Google Analytics property name (`None` to disable analytics).
+- `DISPLAY_META_ABOVE_ARTICLE`: Set to `True` to display article information above the article (default is below).
 - `DISQUS_SITENAME`: Set this to enable Disqus comments on articles.
 - `DISQUS_COLLAPSED`: Set to `True` to have article comments hidden by default. Clicking a link on the page will load them.
 - `USER_LOGO_URL`: The image to display as the profile image. Can be local or a remote URL.
