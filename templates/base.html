@@ -131,7 +131,7 @@
       <a href="{{ SITEURL }}">Home</a>
 
       {% if DISPLAY_PAGES_ON_MENU %}
-      {% for p in pages %}
+      {% for p in PAGES %}
       {% if p.url != "index.html" %}
       &#124; <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
       {% endif %}
