@@ -14,9 +14,8 @@ $code-linebg: #dddddd;
 $accent: #0e94ec;
 $danger: red;
 
-@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono);
-$sans: 'Roboto', sans-serif;
-$mono: 'Roboto Mono';
+$sans: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+$mono: monospace;
 
 $border_color: #c2c2c2;
 $pag_label_size: 60px;
