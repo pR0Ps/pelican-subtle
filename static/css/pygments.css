@@ -2,7 +2,7 @@
 
 /* See available classes at https://bitbucket.org/birkenfeld/pygments-main/src/default/pygments/token.py */
 
-.hll { background-color: #ffd800; padding-right:100%; }
+.hll { background-color: #ffd800; display: block;}
 .w { color: #bbbbbb; }
 /* .esc (Escape) */
 .err { color: #a61717; background-color: #e3d2d2; }

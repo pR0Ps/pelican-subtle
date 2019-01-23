@@ -28,7 +28,7 @@ $horiz_pad: 40px;
 $main_font_size: 1rem;
 $nav_font_size: 1rem;
 $subtitle_font_size: 0.9rem;
-$code_font_size: 0.9rem;
+$code_font_size: 1rem;
 $article_meta_font_size: 0.8rem;
 $pagination_font_size: 0.9rem;
 $footer_font_size: 0.7rem;
@@ -183,14 +183,19 @@ main {
 
       pre {
         @include codeformat;
-        line-height: 1.125em;
+        line-height: 1.25;
         margin-bottom: 0px;
         margin-top: 0px;
         padding-top: 5px;
         padding-bottom: 10px;
       }
 
+      div.highlight {
+        overflow: auto;
+      }
+
       div.highlight pre {
+        display: inline-block;
         padding-left: 10px;
         overflow-x: auto;
         border: 1px solid $code-border;
