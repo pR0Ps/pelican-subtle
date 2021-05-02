@@ -28,10 +28,10 @@
   {% block head %}
   <meta name="keywords" content="
     {%- if GLOBAL_KEYWORDS -%}
-      {{ GLOBAL_KEYWORDS|join(', ') }}
+      {{ GLOBAL_KEYWORDS|sort|join(', ') }}
       {%- if tags -%}{{', '}}{%- endif -%}
     {%- endif -%}
-    {{tags|join(', ', attribute='0') }}">
+    {{tags|sort|join(', ', attribute='0') }}">
   {% endblock %}
 
   <title>{% block title %}{{ SITENAME }}{% endblock %}</title>

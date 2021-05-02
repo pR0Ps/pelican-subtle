@@ -2,10 +2,10 @@
 {% block head %}
 <meta name="keywords" content="
   {%- if GLOBAL_KEYWORDS -%}
-    {{ GLOBAL_KEYWORDS|join(', ') }}
+    {{ GLOBAL_KEYWORDS|sort|join(', ') }}
     {%- if article.tags -%}{{', '}}{%- endif -%}
   {%- endif -%}
-  {{article.tags|join(', ') }}">
+  {{article.tags|sort|join(', ') }}">
 {% endblock %}
 
 {% block title %}{{ article.title|striptags|escape }} | {{ SITENAME }}{% endblock %}
