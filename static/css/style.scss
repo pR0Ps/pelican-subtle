@@ -191,15 +191,19 @@ main {
 
       div.highlight {
         overflow: auto;
+        background: $code-background;
       }
 
       div.highlight pre {
+        code {
+          padding: 0px;
+          background: $code-background;
+        }
+
         display: inline-block;
         padding-left: 10px;
-        overflow-x: auto;
         border: 1px solid $code-border;
         border-left: 3px solid $accent;
-        background: $code-background;
       }
 
       /* Line numbers are enabled */
